@@ -1,0 +1,237 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #e3f2fd, #ffffff);
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.box {
+  background-color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  width: 340px;
+}
+
+.bus-image {
+  width: 70px;
+  margin-bottom: 10px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 15px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #2196f3;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background-color: #1976d2;
+}
+
+.bus-info, #timer {
+  margin-top: 10px;
+  background: #f4f7fb;
+  border-radius: 10px;
+  padding: 10px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* =========================
+   BUS SEARCH RESULTS
+========================= */
+.bus-scroll {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+.bus-card {
+  min-width: 240px;
+  background: #f4f7fb;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.bus-card h3 {
+  margin: 0 0 5px 0;
+}
+
+.bus-card p {
+  margin: 2px 0;
+}
+
+.bus-card button {
+  margin-top: 10px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.bus-card button:hover {
+  background-color: #1976d2;
+}
+/* =========================
+   SEAT SELECTION PAGE
+========================= */
+.seat-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.seat-left, .seat-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* Seats grid */
+.seat-layout {
+  display: grid;
+  grid-template-columns: repeat(5, 50px);
+  gap: 10px;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.seat {
+  background: #ddd;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.seat:hover:not(:disabled) {
+  background: #90ee90;
+}
+
+.booked {
+  background: #ff4d4d;
+  color: white;
+}
+
+.selected {
+  background: #16a34a;
+  color: white;
+}
+
+/* Passenger details box */
+.seat-right {
+  text-align: left;
+}
+
+.seat-right h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.seat-right label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+.seat-right input, .seat-right select {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.seat-right button {
+  margin-top: 15px;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 800px) {
+  .seat-page {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .seat-layout {
+    grid-template-columns: repeat(4, 50px);
+  }
+}
+
+
+/* =========================
+   QR PAGE
+========================= */
+#qrImage {
+  margin-top: 20px;
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+}
+
+.tick-mark {
+  font-size: 60px;
+  color: #16a34a;
+  font-weight: bold;
+}
+
+.confirmed-text {
+  color: #16a34a;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+/* =========================
+   RESPONSIVENESS
+========================= */
+@media (max-width: 800px) {
+  .box {
+    width: 90%;
+    padding: 30px 20px;
+  }
+
+  .seat-layout {
+    grid-template-columns: repeat(4, 50px);
+  }
+}

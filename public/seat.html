@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Seat Selection</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-container seat-page">
+    <!-- LEFT: Seats -->
+    <div class="box seat-left">
+      <img src="bus.png" class="bus-image" alt="Bus">
+      <h2>Select Your Seat</h2>
+      <div id="busInfo" class="bus-info"></div>
+      <h3 id="timer">⏳ Calculating time...</h3>
+      <div id="seats" class="seat-layout"></div>
+    </div>
+
+    <!-- RIGHT: Passenger Details -->
+    <div class="box seat-right" id="details" style="display:none;">
+      <h2>Passenger Details</h2>
+
+      <label for="name">Name:</label>
+      <input id="name" placeholder="Enter Name">
+
+      <label for="age">Age:</label>
+      <input id="age" type="number" placeholder="Enter Age">
+
+      <label for="gender">Gender:</label>
+      <select id="gender">
+        <option value="">Select Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+
+      <button id="confirmBtn" onclick="confirmBooking()">Confirm Booking</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

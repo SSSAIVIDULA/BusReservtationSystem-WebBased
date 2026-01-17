@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Buses</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-container">
+    <div class="box">
+      <img src="bus.png" class="bus-image" alt="Bus">
+      <h2>Search Buses</h2>
+      <select id="busStand">
+        <option value="">Select Bus Stand</option>
+      </select>
+      <input id="from" placeholder="From City">
+      <input id="to" placeholder="To City">
+      <input id="date" type="date">
+      <button onclick="searchBus()">Search</button>
+      <div id="result" class="bus-scroll"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    const stands = ["Erode Bus Stand", "Gobi Bus Stand", "Sathy Bus Stand"];
+    const select = document.getElementById("busStand");
+    stands.forEach(s => {
+      const opt = document.createElement("option");
+      opt.value = s;
+      opt.textContent = s;
+      select.appendChild(opt);
+    });
+    const today = new Date();
+    const max = new Date(); max.setDate(today.getDate() + 14);
+    const fmt = d => d.toISOString().split("T")[0];
+    document.getElementById("date").min = fmt(today);
+    document.getElementById("date").max = fmt(max);
+  </script>
+</body>
+</html>
